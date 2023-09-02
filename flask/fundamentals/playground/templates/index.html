@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Playground</title>
+    <style>
+        body {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: flex-start;
+            gap: 25px;
+        }
+        .box {
+            width: 250px;
+            height: 250px;
+            background-color: {{color}};
+            border: 3px solid black;
+        }
+    </style>
+
+</head>
+<body>
+    {% for i in range(number) %}
+
+    <div class="box">
+    </div>
+    {% endfor %}
+    
+</body>
+</html>
