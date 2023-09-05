@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='/styles.css')}}">
+    <title>Counter</title>
+</head>
+<body>
+    <div class="container">
+        <h1>Visit Counter</h1>
+        <p><span>{{ session['actual_count'] }}</span><span>Actual Visit</span></p>
+        <p><span>{{ session['count'] }}</span><span>Includes Boosted Visit</span></p>
+        <div>
+            <a href="/"><button class="add-count">Refresh Page</button></a>
+            <a href="/two_visits"><button class="add-two">Add two visits</button></a>
+            <a href="/destroy_session"><button class="reset">Reset Session</button></a>
+        </div>
+        <div class="form-container">
+            <form action="/multiple_visits" method="POST">
+                <input name="number" type="number">
+                <button class="multiple_visits" type="submit">Add multiple visits</button>
+            </form>
+        </div>
+        <p class="b64">Base 64 encoded string for <span>b'{"count":{{session['count']}}}'</span> is <span>{{finalStr}}</span></p>
+    </div>
+</body>
+</html>

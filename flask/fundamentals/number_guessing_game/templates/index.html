@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{url_for('static', filename='/styles.css')}}">
+    <title>Number Guess</title>
+</head>
+<body>
+    <div class="container">
+        <h1>Welcome to the guess the number game!</h1>
+        <h2>I am thinking of a number between 1 and 100</h2>
+        <h2>Can you guess what it is?</h2>
+        {% if not game_won and game_started %}
+            <div class="guess-clue">
+                {% if guess_high %}
+                    <p>Too High!</p>
+                {% else %}
+                    <p>Too Low!</p>
+                {% endif %}
+            </div>
+        {% endif %}
+        <form action="/guess" method='post'>
+            <input name="guess" type="number">
+            <button type="submit">Submit</button>
+        </form>
+    </div>
+</body>
+</html>
