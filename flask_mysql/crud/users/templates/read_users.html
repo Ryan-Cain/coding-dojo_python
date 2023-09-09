@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>All Users</title>
+    <style>
+      body {
+        display: flex;
+        justify-content: center;
+        padding-top: 125px;
+      }
+      th, td {
+        padding: 10px 20px;
+        border: 1px solid black;
+      }
+      table {
+        padding-bottom: 25px;
+      }
+      a {
+        font-size: 22px;
+        color: blue
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1>All Users</h1>
+      <table>
+        <thead>
+          <th>ID</th>
+          <th>Full Name</th>
+          <th>Email</th>
+          <th>Created At</th>
+        </thead>
+        <tbody>
+          {% for user in users %}
+          <tr>
+            <td>{{user.id}}</td>
+            <td>{{user.first_name}} {{user.last_name}}</td>
+            <td>{{user.email}}</td>
+            <td>{{user.created_at}}</td>
+          </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+      <a href="/create_user">Add a new User</a>
+    </div>
+  </body>
+</html>

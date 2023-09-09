@@ -19,16 +19,25 @@ def add_friend_form_submit():
     Friend.save(request.form)
     return redirect('/')
 
-@app.route('/get_friend_by_id/<int:num>')
-def get_friend_by_id(num):
-    friend = Friend.get_friend_by_id(num)
+@app.route('/get_friend_by_id/<int:id>')
+def get_friend_by_id(id):
+    friend = Friend.get_friend_by_id(id)
     return render_template('/single_friend.html', friend=friend)
 
-# @app.route('/update_record')
-# def update_record():
+@app.route('/update_friend/<int:id>')
+def update_friend(id):
+    friend = Friend.get_friend_by_id(id)
+    return render_template('/update_friend.html', friend=friend)
 
-#     return redirect('/')
+@app.route('/update_friend_submit', methods=["POST"])
+def update_friend_submit():
+    Friend.update_friend(request.form)
+    return redirect('/')
 
+@app.route('/delete_friend/<int:id>')
+def delete_friend_by_id(id):
+    Friend.delete_friend(id)
+    return redirect('/')
 
 if __name__ == "__main__":
     app.run(debug=True)

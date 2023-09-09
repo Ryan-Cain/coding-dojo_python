@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Friend</title>
+</head>
+<body>
+    <h1>Update Friend</h1>
+<form action="/update_friend_submit" method="POST">
+    <input type="hidden" value="{{friend.id}}" name="id">
+    <label for="first_name">First Name:</label>
+    <input type="text" name="first_name" value="{{friend.first_name}}">
+    <label for="last_name">Last Name:</label>
+    <input type="text" name="last_name" value="{{friend.last_name}}">
+    <label for="occupation" >Occupation:</label>
+    <input type="text" name="occupation" value="{{friend.occupation}}">
+    <input type="submit" value="Update Friend">
+</form>
+
+</body>
+</html>

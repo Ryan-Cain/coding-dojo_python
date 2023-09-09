@@ -29,20 +29,30 @@ class Friend:
         return connectToMySQL('friends').query_db( query, data )
     
     @classmethod
+    def update_friend(cls, data ):
+        query = "UPDATE friends SET first_name = %(first_name)s , last_name = %(last_name)s, occupation = %(occupation)s , updated_at = NOW() WHERE id = %(id)s;"
+        # data is a dictionary that will be passed into the save method from server.py
+        return connectToMySQL('friends').query_db( query, data )
+    
+    @classmethod
     def get_friend_by_id(cls, id):
         query = 'SELECT * FROM friends WHERE id = %(id)s'
         data = {
             'id': id
         }
-
         results = connectToMySQL('friends').query_db(query, data)
         print(results)
         row = results[0]
-
         return row
 
-    # @classmethod
-    # def update_record(cls, data):
-    #     pass
+    @classmethod
+    def delete_friend(cls, id):
+        data = {
+            'id': id
+        }
+        query = "DELETE FROM friends WHERE id=%(id)s"
+        return connectToMySQL('friends').query_db(query, data)
+
+        
         
 

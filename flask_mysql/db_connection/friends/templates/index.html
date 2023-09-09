@@ -1,20 +1,54 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Friends</title>
-</head>
-<body>
-    <a href="/add_friend">Add a friend</a>
-    {% for friend in friends %}
-    <div>
-        <a href="/get_friend_by_id/{{friend.id}}">
-        <span>{{friend.first_name}}</span>
-        <span>{{friend.last_name}}</span>
-        <span>{{friend.occupation}}</span>
-        </a>
+    <style>
+      body {
+        display: flex;
+        justify-content: center;
+        padding: 125px;
+      }
+      th,
+      td {
+        padding: 10px 20px;
+        border: 1px solid black;
+      }
+      table {
+        padding-bottom: 25px;
+      }
+      a {
+        color: blue;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1>Friends</h1>
+      <a href="/add_friend">Add a friend</a>
+      <table>
+        <thead>
+          <th>First Name</th>
+          <th>Last Name</th>
+          <th>Occupation</th>
+          <th>View Friend Info</th>
+          <th>Update Friend Info</th>
+          <th>Delete Friend</th>
+        </thead>
+        <tbody>
+          {% for friend in friends %}
+          <tr>
+            <td>{{friend.first_name}}</td>
+            <td>{{friend.last_name}}</td>
+            <td>{{friend.occupation}}</td>
+            <td><a href="/get_friend_by_id/{{friend.id}}">View Friend </a></td>
+            <td><a href="/update_friend/{{friend.id}}">Update Friend </a></td>
+            <td><a href="/delete_friend/{{friend.id}}">Delete Friend </a></td>
+          </tr>
+          {% endfor %}
+        </tbody>
+      </table>
     </div>
-    {% endfor %}
-</body>
+  </body>
 </html>
