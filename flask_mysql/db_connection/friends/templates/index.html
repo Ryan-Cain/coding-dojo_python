@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Friends</title>
+</head>
+<body>
+    <a href="/add_friend">Add a friend</a>
+    {% for friend in friends %}
+    <div>
+        <a href="/get_friend_by_id/{{friend.id}}">
+        <span>{{friend.first_name}}</span>
+        <span>{{friend.last_name}}</span>
+        <span>{{friend.occupation}}</span>
+        </a>
+    </div>
+    {% endfor %}
+</body>
+</html>

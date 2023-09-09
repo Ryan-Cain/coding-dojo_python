@@ -9,11 +9,12 @@ app.secret_key = 'shh this is a secret'
 @app.route('/')
 def game():
     if not 'game_started' in session:
-        session['game_started'] = False
+        print('game started now')
+        session['game_started'] = True
     if not 'game_won' in session:
         session['game_won'] = False
     if not 'guess_high' in session:
-        session['guess_high'] = False
+        session['guess_high'] = True
     if not 'number' in session:
         session['number'] = random.randint(1, 101)
     return render_template('index.html', game_won=session['game_won'])

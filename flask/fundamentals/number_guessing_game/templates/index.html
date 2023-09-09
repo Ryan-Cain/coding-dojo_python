@@ -11,9 +11,9 @@
         <h1>Welcome to the guess the number game!</h1>
         <h2>I am thinking of a number between 1 and 100</h2>
         <h2>Can you guess what it is?</h2>
-        {% if not game_won and game_started %}
+        {% if game_won==False and game_started==True %}
             <div class="guess-clue">
-                {% if guess_high %}
+                {% if guess_high==True %}
                     <p>Too High!</p>
                 {% else %}
                     <p>Too Low!</p>

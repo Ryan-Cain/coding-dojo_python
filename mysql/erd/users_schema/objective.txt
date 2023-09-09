@@ -1,0 +1,13 @@
+Create an ERD to represent the database for an application that track users.
+
+Each user should have an id, first_name, last_name, email, created_at and updated_at. Use the MySQL Workbench for creating this diagram.
+
+Create a new model (ERD)
+
+Create a table called users
+
+Name the schema users_schema
+
+Add the following fields to the users table: id, first_name, last_name, email, created_at and updated_at
+
+Save your ERD as a .mwb file and submit it to the platform
