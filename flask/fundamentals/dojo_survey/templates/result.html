@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Result</title>
+    <style>
+      body {
+        display: flex;
+        justify-content: center;
+        padding-top: 125px;
+      }
+      h1 {
+        text-decoration: underline;
+      }
+      .container {
+        border: 3px solid black;
+        padding: 15px;
+      }
+      .container > div {
+        display: flex;
+        justify-content: space-between;
+      }
+      button {
+        width: fit-content;
+        border: 3px solid black;
+        border-radius: 3px;
+        box-shadow: 3px 3px;
+        background-color: rgb(118, 165, 175);
+        color: white;
+        padding: 3px 6px;
+        cursor: pointer;
+      }
+      a {
+        margin: auto 15px auto auto;
+        width: 100%;
+        display: flex;
+        justify-content: flex-end;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1>Submitted Info</h1>
+      <div>
+        <p>Name:</p>
+        <p>{{session.name}}</p>
+      </div>
+      <div>
+        <p>Dojo Location:</p>
+        <p>{{session.dojo_location}}</p>
+      </div>
+      <div>
+        <p>Favorite Language:</p>
+        <p>{{session.fav_language}}</p>
+      </div>
+      <div>
+        <p>Comment:</p>
+        <p>{{session.comment}}</p>
+      </div>
+      <a href="/"><button>Go Back</button></a>
+    </div>
+  </body>
+</html>

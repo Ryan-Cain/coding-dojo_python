@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Form</title>
+    <style>
+      body {
+        display: flex;
+        justify-content: center;
+        padding-top: 125px;
+      }
+      form {
+        border: 3px solid black;
+        padding: 15px 15px 0 15px;
+      }
+      form > div {
+        margin-bottom: 15px;
+        display: flex;
+        justify-content: space-between;
+      }
+      form input,
+      form select {
+        width: 50%;
+      }
+      .col {
+        flex-direction: column;
+      }
+      .col textarea {
+        width: 100%;
+        margin: 15px 0;
+      }
+      .col > button {
+        width: fit-content;
+        align-self: flex-end;
+        border: 3px solid black;
+        border-radius: 3px;
+        box-shadow: 3px 3px;
+        background-color: rgb(118, 165, 175);
+        color: white;
+        padding: 3px 6px;
+        cursor: pointer;
+      }
+    </style>
+  </head>
+  <body>
+    <form action="/process" method="POST">
+      <div>
+        <label for="name">Your Name</label>
+        <input type="text" name="name" />
+      </div>
+      <div>
+        <label for="dojo_location">Dojo Location</label>
+        <select name="dojo_location" id="dojo_location">
+          <option value="New York">New York</option>
+          <option value="San Fransisco">San Fransisco</option>
+          <option value="Atlanta">Atlanta</option>
+          <option value="Remote">Remote</option>
+        </select>
+      </div>
+      <div>
+        <label for="fav_language">Favorite Language</label>
+        <select name="fav_language" id="fav_language">
+          <option value="Python">Python</option>
+          <option value="Javascript">Javascript</option>
+          <option value="C+">C+</option>
+          <option value="Elixr">Elixr</option>
+        </select>
+      </div>
+      <div class="col">
+        <label for="comment">Comment (Optional)</label>
+        <!-- <input type="text" name="comment"> -->
+        <textarea name="comment" id="comment" cols="30" rows="5"></textarea>
+        <button type="submit">Submit</button>
+      </div>
+    </form>
+  </body>
+</html>

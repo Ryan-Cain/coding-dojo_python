@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Show User</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            padding-top: 125px;
+        }
+        .user_info {
+            border: 3px solid black;
+            padding: 10px;
+        }
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        a {
+            font-size: 22px;
+            color: blue;
+        }
+        .options {
+            padding-top: 25px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>User {{user.id}}</h1>
+            <a href="/">Home</a>
+        </div>
+        <div class="user_info">
+            <p>Full Name: {{user.first_name}} {{user.last_name}}</p>
+            <p>Email: {{user.email}}</p>
+            <p>Created On: {{user.created_at}}</p>
+            <p>Last Updated On: {{user.updated_at}}</p>
+        </div>
+        <div class="options">
+            <a href="/edit_user/{{user.id}}">Edit</a>
+            <span>|</span>
+            <a href="/delete_user/{{user.id}}">Delete</a>
+        </div>
+    </div>
+</body>
+</html>
