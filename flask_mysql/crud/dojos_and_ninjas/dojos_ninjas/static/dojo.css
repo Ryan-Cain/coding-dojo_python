@@ -1,0 +1,21 @@
+body {
+    display: flex;
+    justify-content: center;
+    padding-top: 125px;
+  }
+  .container {
+    width: 65%;
+    display: flex;
+    justify-content: space-around;
+  }
+  .new-dojo label {
+    padding-right: 50px;
+}
+.new-dojo button {
+    margin-top: 35px;
+  }
+.dojo-list {
+    border: 3px solid black;
+    padding: 10px 200px 10px 10px;
+    margin-bottom: 25px;
+  }

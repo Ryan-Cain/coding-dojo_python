@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="{{url_for('static', filename='add_ninja.css')}}">
+    <title>Dojos</title>
+  </head>
+  <body>
+    <div class="container">
+      <div class="new-ninja">
+        <h1>New Ninja</h1>
+        <form action="/submit_add_ninja" method="POST">
+          <label>Name:</label>
+          <select name="dojo_location">
+            {% for dojo in dojos %}
+              <option value="{{dojo.id}}">{{dojo.name}}</option>
+            {% endfor %}
+          </select>
+          <br />
+          <label>First Name:</label>
+          <input type="text" name="first_name"/>
+          <br />
+          <label>Last Name:</label>
+          <input type="text" name="last_name"/>
+          <br />
+          <label>Age:</label>
+          <input type="number" name="age"/>
+          <br />
+          <button type="submit">Create</button>
+        </form>
+      </div>
+      <a href="/">Home</a>
+    </div>
+  </body>
+</html>
