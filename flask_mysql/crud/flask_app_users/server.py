@@ -11,7 +11,8 @@
 # After successful update of user, redirect to the Read (One) page and display the updated information
 # All Home links should redirect to the Read (All) page
 
-from flask_app_users import app
+from flask_app import app
+from flask_app.controllers import users
 
 
 if __name__ == "__main__":
