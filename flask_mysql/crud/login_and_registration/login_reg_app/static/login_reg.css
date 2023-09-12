@@ -1,0 +1,16 @@
+body {
+    display: flex;
+    justify-content: center;
+}
+.forms-container {
+    padding-top: 125px;
+    display: flex;
+}
+form {
+    background-color: rgba(40, 42, 43, 0.889);
+    width: 22vw;
+}
+.register-form {
+    margin-right: 125px;
+}
+
